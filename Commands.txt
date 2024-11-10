@@ -1,0 +1,40 @@
+COMMANDS TO INSTALL JENKINS IN AMAZON LINUX......
+##################################################
+
+sudo su
+sudo yum install java -y
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo amazon-linux-extras install epel -y
+sudo yum install Jenkins
+ sudo systemctl start jenkins
+sudo systemctl enable jenkins
+
+
+COMMANDS TO INSTALL JENKINS IN UBUNTU
+##########################################
+
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+
+
+INSTALL JENKINS BY USING WAR FILE.
+###################################
+1) UPDATE SYSTEM
+2) INSTALL JAVA
+3) sudo wget dbf987b3aaab16ce20e9413b3082fa323e3724cbb64562ddb64c1e4d4f58b470
+4) RUN THE WAR
+    java -jar jenkins.war --httpPort=9090 &
+
+
+INSTALL JAVA
+###############
+
+sudo apt update
+sudo apt install openjdk-17-jdk -y
+sudo apt update
